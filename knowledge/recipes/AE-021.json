@@ -1,0 +1,126 @@
+{
+  "sourceId": "AE-021",
+  "title": "Glow e iluminación — receta aprendida",
+  "summary": "Acabado de glow basado en capas y control de rango dinámico: usar uno o varios glows con radios/intensidades diferentes, preservar el núcleo del elemento, integrar reflejos/partículas cuando corresponda y validar en alta calidad/32-bpc para evitar clipping.",
+  "techniques": [
+    "glow",
+    "layered glow",
+    "lighting polish",
+    "32-bpc",
+    "reflections",
+    "sparks",
+    "highlight control"
+  ],
+  "prerequisites": [
+    "Elemento luminoso o highlight definido",
+    "Contraste suficiente entre fuente y fondo",
+    "Proyecto configurado para el rango dinámico necesario"
+  ],
+  "projectStructure": [
+    "Source/highlight layer",
+    "One or more Glow passes",
+    "Optional reflection/light spill",
+    "Optional particles/sparks",
+    "Final color/polish"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Definir qué parte de la imagen debe emitir luz.",
+      "why": "Evitar aplicar glow indiscriminadamente a toda la composición.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Aplicar Glow basado en color/luminancia o alpha según el tipo de elemento.",
+      "why": "Controlar si el halo nace del brillo interno o del borde/transparencia.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Combinar varios radios/intensidades cuando un solo halo se vea plano.",
+      "why": "Crear núcleo, halo medio y dispersión amplia más creíbles.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Trabajar en 32-bpc cuando el glow intenso necesite más rango dinámico.",
+      "why": "Reducir clipping y conservar gradaciones de luz más realistas.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 5,
+      "action": "Añadir spill/reflejos/partículas solo cuando la luz deba interactuar con el entorno.",
+      "why": "Integrar la fuente luminosa en la escena en vez de dejarla como efecto aislado.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 6,
+      "action": "Revisar a calidad Best/final.",
+      "why": "El resultado del Glow puede variar con calidad y pipeline de color.",
+      "evidence": "confirmed",
+      "timestamp": null
+    }
+  ],
+  "animation": [],
+  "effects": [
+    {
+      "name": "Glow",
+      "purpose": "Crear halo luminoso basado en color o alpha.",
+      "parameters": {},
+      "evidence": "confirmed"
+    }
+  ],
+  "professionalDecisions": [
+    "No tratar Glow como sustituto de iluminación/composición.",
+    "Preservar un núcleo con detalle y usar halos de distinta escala para sensación de energía.",
+    "Usar 32-bpc para efectos de alta intensidad cuando ayude a evitar clipping.",
+    "Añadir reflejos/spill solo donde exista una superficie/entorno que razonablemente reciba esa luz."
+  ],
+  "failureModes": [
+    {
+      "problem": "Todo se vuelve borroso y pierde detalle.",
+      "fix": "Reducir intensidad/radio, separar núcleo y halo, y limitar el efecto a highlights relevantes."
+    },
+    {
+      "problem": "El glow recorta a blanco sin gradación.",
+      "fix": "Trabajar en mayor profundidad de bits y reducir exposición/intensidad antes de apilar más efectos."
+    },
+    {
+      "problem": "La luz parece pegada y no afecta al entorno.",
+      "fix": "Añadir spill/reflection selectivo o ajustar color/contraste local."
+    },
+    {
+      "problem": "Se apilan muchos glows sin propósito.",
+      "fix": "Asignar una función clara a cada pass: núcleo, halo medio, dispersión."
+    }
+  ],
+  "qualityChecks": [
+    "La fuente conserva detalle reconocible.",
+    "Los halos caen gradualmente sin banding/clipping evidente.",
+    "El glow tiene coherencia de color con la escena.",
+    "Reflejos/spill aparecen solo donde tienen sentido.",
+    "La imagen final funciona a calidad Best/render final."
+  ],
+  "reusableRecipe": [
+    "Aísla los highlights que deben emitir luz.",
+    "Elige Glow based on color o alpha.",
+    "Construye uno o varios passes con escalas distintas.",
+    "Usa 32-bpc si el rango dinámico lo necesita.",
+    "Añade spill/reflection/partículas solo si mejoran integración.",
+    "Valida contraste y clipping en calidad final."
+  ],
+  "missingInformation": [
+    "No se recuperó transcripción completa del tutorial original.",
+    "No se atribuyen radios/intensidades exactos.",
+    "Reflejos y partículas dependen del diseño concreto."
+  ],
+  "confidence": 0.78,
+  "analysisMethod": "Título/fuente de tutorial de glow más documentación actual oficial de Adobe sobre Glow, alpha/color basis, calidad Best y ventaja de 32-bpc; las capas múltiples/reflejos se tratan como práctica suplementaria.",
+  "sourceCheckedAt": "2026-09-21"
+}

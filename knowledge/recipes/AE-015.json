@@ -1,0 +1,125 @@
+{
+  "sourceId": "AE-015",
+  "title": "Puppet Tool — receta aprendida",
+  "summary": "Deformación orgánica de ilustraciones mediante una malla y pins colocados en articulaciones/zonas clave. El flujo exige preparar bien el alpha, controlar la malla y limitar la deformación para evitar aspecto gomoso o distorsiones.",
+  "techniques": [
+    "puppet tool",
+    "puppet pins",
+    "mesh deformation",
+    "illustration animation",
+    "stiffness",
+    "overlap",
+    "organic deformation"
+  ],
+  "prerequisites": [
+    "Ilustración recortada con alpha limpio",
+    "Elementos que toleren deformación de malla"
+  ],
+  "projectStructure": [
+    "Illustration layer",
+    "Puppet mesh",
+    "Pins on joints/key regions",
+    "Optional starch/overlap controls"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Asegurar que la ilustración tenga fondo transparente/alpha limpio.",
+      "why": "La malla debe seguir el contorno del sujeto y no deformar el fondo.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Colocar pins en articulaciones y puntos de control principales.",
+      "why": "Definir dónde la malla puede ser manipulada.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Animar pins con keyframes o captura de movimiento manual.",
+      "why": "Generar deformación orgánica sin separar todas las partes en capas rígidas.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Ajustar expansión/calidad de la malla cuando se recorta o deja halos.",
+      "why": "Evitar contornos y deformaciones incorrectas.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 5,
+      "action": "Rigidizar zonas que no deberían doblarse y controlar solapes cuando sea necesario.",
+      "why": "Evitar que brazos/cuerpo parezcan goma y resolver qué partes pasan delante/detrás.",
+      "evidence": "inferred",
+      "timestamp": null
+    }
+  ],
+  "animation": [
+    {
+      "property": "Puppet Pin Position",
+      "from": "pose base",
+      "to": "pose deformada",
+      "timing": "keyframes según acción",
+      "easing": "según movimiento del miembro",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [
+    {
+      "name": "Puppet",
+      "purpose": "Crear malla deformable sobre la capa.",
+      "parameters": {},
+      "evidence": "confirmed"
+    }
+  ],
+  "professionalDecisions": [
+    "Usar Puppet cuando una deformación continua sea más apropiada que un rig de piezas rígidas.",
+    "Colocar solo los pins necesarios para mantener control y evitar una malla difícil de gestionar.",
+    "Bloquear visualmente zonas rígidas y dejar libertad en articulaciones.",
+    "Separar partes en capas cuando el solape o la anatomía no pueda resolverse limpiamente dentro de una sola malla."
+  ],
+  "failureModes": [
+    {
+      "problem": "Toda la imagen se deforma incluyendo el fondo.",
+      "fix": "Recortar correctamente el sujeto y trabajar con alpha transparente."
+    },
+    {
+      "problem": "Brazos/piernas se doblan como goma.",
+      "fix": "Añadir rigidez/starch o separar partes si la malla no representa bien la anatomía."
+    },
+    {
+      "problem": "El mesh deja una línea/halo alrededor del sujeto.",
+      "fix": "Revisar expansión y cobertura de la malla."
+    },
+    {
+      "problem": "Una mano aparece detrás del torso cuando debería estar delante.",
+      "fix": "Usar control de overlap/profundidad o separar esa parte en otra capa."
+    }
+  ],
+  "qualityChecks": [
+    "La silueta no se rompe durante la deformación.",
+    "Las articulaciones doblan de forma creíble.",
+    "Las zonas rígidas no ondulan como goma.",
+    "No hay halos ni cortes del mesh.",
+    "Los solapes de miembros mantienen la profundidad visual correcta."
+  ],
+  "reusableRecipe": [
+    "Recorta la ilustración con alpha limpio.",
+    "Coloca pins en articulaciones y anclajes clave.",
+    "Anima primero movimientos simples.",
+    "Corrige rigidez/mesh si aparecen deformaciones blandas.",
+    "Controla overlap o separa capas cuando la malla única no sea suficiente.",
+    "Pulir timing y easing después de que la deformación sea estable."
+  ],
+  "missingInformation": [
+    "El video recuperado confirma Puppet Tool y animación de escala/posición/timing, pero no expone públicamente todos los parámetros.",
+    "Los valores exactos de mesh/stiffness/overlap no están disponibles en la descripción."
+  ],
+  "confidence": 0.84,
+  "analysisMethod": "Descripción pública del tutorial de ilkin; comportamiento de malla, alpha, stiffness y overlap contrastado con documentación/tutoriales técnicos del Puppet Tool, sin atribuir valores no mostrados al video.",
+  "sourceCheckedAt": "2026-09-21"
+}

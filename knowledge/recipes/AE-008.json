@@ -1,0 +1,121 @@
+{
+  "sourceId": "AE-008",
+  "title": "Cámara 3D en After Effects — receta aprendida",
+  "summary": "Flujo para preparar capas 3D, crear una cámara controlada por Null, entender Point of Interest y vistas 3D, animar la cámara con keyframes y usar profundidad/perspectiva para generar parallax.",
+  "techniques": [
+    "3D camera",
+    "camera rig",
+    "control null",
+    "3D layers",
+    "point of interest",
+    "separate dimensions",
+    "parallax",
+    "depth of field",
+    "graph editor"
+  ],
+  "prerequisites": [
+    "Composición preparada",
+    "Capas que puedan convertirse a 3D",
+    "Una intención clara de movimiento de cámara"
+  ],
+  "projectStructure": [
+    "Camera layer",
+    "Control Null",
+    "3D content layers"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Crear/configurar una cámara 3D.",
+      "why": "Establecer el punto de vista y la perspectiva de la escena.",
+      "evidence": "confirmed",
+      "timestamp": "00:01:36"
+    },
+    {
+      "step": 2,
+      "action": "Crear un Null de control para la cámara.",
+      "why": "Centralizar el control del rig y facilitar movimientos/orbitado.",
+      "evidence": "confirmed",
+      "timestamp": "00:02:03"
+    },
+    {
+      "step": 3,
+      "action": "Preparar las capas que participarán en el espacio 3D.",
+      "why": "Permitir profundidad, perspectiva y desplazamiento relativo.",
+      "evidence": "confirmed",
+      "timestamp": "00:02:28"
+    }
+  ],
+  "animation": [
+    {
+      "property": "Camera/Null transforms",
+      "from": "estado inicial",
+      "to": "estado final",
+      "timing": "definido con keyframes",
+      "easing": "suavizado con Graph Editor",
+      "evidence": "confirmed"
+    },
+    {
+      "property": "Position dimensions",
+      "from": "combinadas",
+      "to": "separadas cuando conviene",
+      "timing": "según trayectoria",
+      "easing": "no se especifican valores",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [
+    {
+      "name": "Depth of Field",
+      "purpose": "Añadir profundidad óptica cuando sea apropiado.",
+      "parameters": {},
+      "evidence": "confirmed"
+    },
+    {
+      "name": "Camera focal length",
+      "purpose": "Controlar perspectiva/campo de visión.",
+      "parameters": {},
+      "evidence": "confirmed"
+    }
+  ],
+  "professionalDecisions": [
+    "Usar un Null de control cuando simplifique el rig de cámara.",
+    "Inspeccionar la escena desde vistas 3D antes de ajustar profundidad.",
+    "Distinguir Point of Interest de orbitado para elegir el comportamiento de cámara correcto.",
+    "Usar profundidad real entre capas para obtener parallax en vez de fingirlo solo con movimientos 2D."
+  ],
+  "failureModes": [
+    {
+      "problem": "Mover cámara o capas sin revisar la escena desde vistas 3D.",
+      "fix": "Usar vistas alternativas para comprobar distribución y orientación."
+    },
+    {
+      "problem": "Trayectoria mecánica o difícil de ajustar.",
+      "fix": "Separar dimensiones cuando aporte control y suavizar con Graph Editor."
+    }
+  ],
+  "qualityChecks": [
+    "La perspectiva cambia de forma coherente al mover la cámara.",
+    "Foreground y background muestran desplazamiento relativo perceptible.",
+    "El movimiento de cámara no se siente lineal o abrupto."
+  ],
+  "reusableRecipe": [
+    "Preparar las capas relevantes como 3D.",
+    "Crear cámara y un Null de control cuando facilite el rig.",
+    "Organizar profundidad observando varias vistas 3D.",
+    "Definir Point of Interest/orbitado según el tipo de movimiento.",
+    "Animar cámara o Null con keyframes y separar dimensiones si mejora el control.",
+    "Pulir el timing con Graph Editor.",
+    "Usar profundidad de campo solo si mejora la lectura.",
+    "Revisar el parallax resultante y la perspectiva."
+  ],
+  "missingInformation": [
+    "Valores exactos de focal, apertura y focus distance usados en el ejemplo.",
+    "Distancias Z exactas de las capas.",
+    "Valores exactos de los keyframes y curvas del Graph Editor.",
+    "Ajustes concretos de Depth of Field."
+  ],
+  "confidence": 0.84,
+  "analysisMethod": "Descripción pública y marcadores de capítulos del video; no se atribuyen valores no visibles en esas fuentes.",
+  "sourceCheckedAt": "2026-09-21"
+}

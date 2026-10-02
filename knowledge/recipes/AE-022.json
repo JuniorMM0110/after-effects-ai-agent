@@ -1,0 +1,114 @@
+{
+  "sourceId": "AE-022",
+  "title": "MOGRT y sistemas reutilizables — receta aprendida",
+  "summary": "Construir Motion Graphics Templates exponiendo solo los controles que el editor necesita, preservando el diseño y permitiendo versiones rápidas en Premiere sin volver constantemente a After Effects.",
+  "techniques": [
+    "mogrt",
+    "motion graphics templates",
+    "essential graphics",
+    "responsive controls",
+    "editable properties",
+    "template design",
+    "premiere handoff"
+  ],
+  "prerequisites": [
+    "Composición de motion graphics ya funcional",
+    "Propiedades claramente identificadas como editables o bloqueadas"
+  ],
+  "projectStructure": [
+    "Master composition",
+    "Essential Graphics controls",
+    "Optional expressions/sliders",
+    "Packaged source assets/precomps"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Elegir la composición principal del template.",
+      "why": "Definir qué pieza se exportará como sistema reutilizable.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Agregar al panel Essential Graphics solo las propiedades que deben ser editables.",
+      "why": "Dar control sin exponer la complejidad interna del proyecto.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Exponer texto, color, tamaño u otros valores que necesiten variación editorial.",
+      "why": "Permitir múltiples versiones manteniendo el estilo.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Conectar sliders/checkboxes a expresiones cuando deban cambiar comportamientos o estados.",
+      "why": "Convertir lógica interna compleja en controles simples.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 5,
+      "action": "Definir poster frame y exportar el Motion Graphics Template a biblioteca o archivo local.",
+      "why": "Facilitar descubrimiento y uso del template en Premiere Pro.",
+      "evidence": "confirmed",
+      "timestamp": null
+    }
+  ],
+  "animation": [],
+  "effects": [],
+  "professionalDecisions": [
+    "Exponer la menor cantidad de controles necesaria para completar las variaciones reales.",
+    "Nombrar controles de forma comprensible para un editor que no conoce el proyecto de After Effects.",
+    "Mantener la lógica de layout/animación dentro del template y exponer parámetros, no implementación.",
+    "Usar sliders/checkboxes como interfaz de comportamientos complejos cuando sea más seguro que editar capas."
+  ],
+  "failureModes": [
+    {
+      "problem": "El template expone demasiadas propiedades y es difícil de usar.",
+      "fix": "Reducir controles a decisiones editoriales reales y agrupar/nombrar claramente."
+    },
+    {
+      "problem": "Cambiar texto rompe layout o sale del encuadre.",
+      "fix": "Diseñar responsividad/constraints antes de exportar."
+    },
+    {
+      "problem": "El editor necesita entrar en After Effects para una variación común.",
+      "fix": "Exponer esa decisión como propiedad o control del MOGRT."
+    },
+    {
+      "problem": "El usuario puede romper la identidad visual cambiando parámetros críticos.",
+      "fix": "No exponer propiedades que deban permanecer bloqueadas o limitar sus rangos."
+    }
+  ],
+  "qualityChecks": [
+    "El template funciona con textos cortos y largos dentro de los casos previstos.",
+    "Los controles tienen nombres claros y valores iniciales seguros.",
+    "El editor puede crear variantes sin abrir After Effects.",
+    "La identidad visual permanece protegida.",
+    "Assets y precomps necesarios viajan correctamente con el template."
+  ],
+  "reusableRecipe": [
+    "Construye primero una composición robusta.",
+    "Selecciona qué decisiones debe poder cambiar un editor.",
+    "Expón solo esas propiedades en Essential Graphics.",
+    "Conecta sliders/checkboxes a expresiones cuando simplifiquen estados complejos.",
+    "Prueba valores extremos y longitudes de texto.",
+    "Define poster frame y exporta el MOGRT.",
+    "Valida el template dentro de Premiere antes de entregar."
+  ],
+  "missingInformation": [
+    "El video original no es la única referencia; la documentación actual de Adobe amplía capacidades de MOGRT.",
+    "La lista exacta de propiedades soportadas depende de la versión de After Effects/Premiere.",
+    "No se atribuyen parámetros específicos de un template concreto."
+  ],
+  "currentCompatibility": {
+    "ae2026": "La documentación 2026 de Adobe mantiene Motion Graphics Templates y Essential Graphics como flujo soportado para controles editables y handoff a Premiere."
+  },
+  "confidence": 0.98,
+  "analysisMethod": "Tutorial/documentación oficial Adobe sobre creación de Motion Graphics Templates y Essential Graphics, incluyendo controles editables, poster frame y exportación.",
+  "sourceCheckedAt": "2026-09-21"
+}

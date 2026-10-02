@@ -1,0 +1,130 @@
+{
+  "sourceId": "AE-018",
+  "title": "UI Motion avanzado — receta aprendida",
+  "summary": "Construcción de interfaces animadas en After Effects combinando jerarquía de UI, profundidad, shading/lighting, cámara y expresiones para lograr una presentación tecnológica más tridimensional y pulida.",
+  "techniques": [
+    "ui motion",
+    "interface animation",
+    "depth",
+    "shading",
+    "lighting",
+    "camera movement",
+    "expressions",
+    "product presentation"
+  ],
+  "prerequisites": [
+    "Diseño de interfaz organizado por componentes",
+    "Jerarquía clara de paneles, tarjetas, texto y controles"
+  ],
+  "projectStructure": [
+    "UI components/precomps",
+    "Depth-separated interface layers",
+    "Camera or coordinated transform rig",
+    "Lighting/shading layers",
+    "Expression-driven controls"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Organizar la interfaz en componentes animables.",
+      "why": "Permitir timing independiente sin perder coherencia del sistema.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Introducir profundidad y movimiento de cámara cuando ayuden a presentar la interfaz.",
+      "why": "Convertir una UI plana en una pieza de motion/product presentation.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Añadir shading e iluminación realista.",
+      "why": "Dar volumen y separar visualmente los componentes.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Usar expresiones/controles para relaciones repetitivas.",
+      "why": "Mantener consistencia y facilitar ajustes globales.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 5,
+      "action": "Pulir entradas, focus states y transiciones entre pantallas/componentes.",
+      "why": "Hacer que la pieza se lea como una experiencia de producto coherente.",
+      "evidence": "inferred",
+      "timestamp": null
+    }
+  ],
+  "animation": [
+    {
+      "property": "UI component transforms",
+      "from": "estado inicial",
+      "to": "estado de enfoque/transición",
+      "timing": "stagger/ritmo coordinado",
+      "easing": "suave y consistente",
+      "evidence": "inferred"
+    },
+    {
+      "property": "Camera/depth",
+      "from": "vista general",
+      "to": "focus/hero state",
+      "timing": "según navegación visual",
+      "easing": "no especificado",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [],
+  "professionalDecisions": [
+    "La profundidad debe reforzar jerarquía de la UI, no convertirla en una escena 3D arbitraria.",
+    "Iluminación y shading deben ser coherentes entre componentes.",
+    "Expresiones son útiles para mantener relaciones de spacing, offsets o comportamiento repetido.",
+    "El motion debe sugerir interacción/estado sin sacrificar legibilidad."
+  ],
+  "failureModes": [
+    {
+      "problem": "Todos los componentes se mueven a la vez y la jerarquía se pierde.",
+      "fix": "Escalonar entradas y definir un foco principal."
+    },
+    {
+      "problem": "La profundidad hace que la UI parezca una pila de tarjetas sin propósito.",
+      "fix": "Usar Z/cámara solo para apoyar navegación y jerarquía."
+    },
+    {
+      "problem": "Shadows/lighting cambian incoherentemente entre pantallas.",
+      "fix": "Definir una lógica de luz global y reutilizarla."
+    },
+    {
+      "problem": "Demasiadas expresiones vuelven el sistema difícil de depurar.",
+      "fix": "Reservarlas para relaciones repetibles y exponer controles claros."
+    }
+  ],
+  "qualityChecks": [
+    "La UI sigue siendo legible durante toda la animación.",
+    "El foco visual coincide con la acción principal.",
+    "Profundidad, cámara y lighting comparten una lógica consistente.",
+    "Los estados/transiciones parecen parte del mismo producto.",
+    "El sistema permanece editable y reutilizable."
+  ],
+  "reusableRecipe": [
+    "Separa la UI por componentes.",
+    "Define foco y orden de lectura.",
+    "Anima componentes con timing coordinado.",
+    "Añade profundidad/cámara solo donde apoyen la presentación.",
+    "Integra shading/lighting consistente.",
+    "Usa expresiones para relaciones reutilizables.",
+    "Revisa legibilidad y continuidad entre estados."
+  ],
+  "missingInformation": [
+    "No se recuperó transcripción completa del tutorial original.",
+    "No se atribuyen expresiones, valores de cámara ni parámetros exactos.",
+    "Los detalles de shading/lighting dependen del diseño mostrado."
+  ],
+  "confidence": 0.83,
+  "analysisMethod": "Descripción pública del tutorial confirma UI motion, shading, realistic lighting, depth/camera y expressions; la estructura de producción se formula sin inventar parámetros.",
+  "sourceCheckedAt": "2026-09-21"
+}

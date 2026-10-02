@@ -1,0 +1,118 @@
+{
+  "sourceId": "AE-010",
+  "title": "Parallax fotográfico avanzado — receta aprendida",
+  "summary": "Conversión rápida de una foto 2D a una escena 2.5D mediante máscaras, clones/duplicados, capas planas separadas en Z y una cámara animada. El método prioriza rapidez, pero reconoce artefactos de borde cuando las máscaras son demasiado simples.",
+  "techniques": [
+    "photo parallax",
+    "2.5D",
+    "layer masks",
+    "clones",
+    "expressions",
+    "3D layers",
+    "Z-depth",
+    "camera animation"
+  ],
+  "prerequisites": [
+    "Una fotografía con profundidad visual interpretable",
+    "Elementos que puedan aproximarse como planos 3D"
+  ],
+  "projectStructure": [
+    "Imagen base o clones",
+    "Capas enmascaradas",
+    "Planos 3D distribuidos en Z",
+    "Camera layer"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Crear clones/duplicados y aislar zonas con máscara.",
+      "why": "Reutilizar una sola imagen para construir varios planos de profundidad.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Usar expresiones para coordinar clones cuando el montaje lo requiera.",
+      "why": "Acelerar la adaptación del sistema a otras imágenes.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Distribuir las capas planas en el eje Z aproximando la forma/profundidad de la escena.",
+      "why": "Crear la geometría 2.5D que producirá el parallax.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Animar una cámara sencilla a través de la escena.",
+      "why": "Convertir la diferencia de profundidad en desplazamiento relativo visible.",
+      "evidence": "confirmed",
+      "timestamp": null
+    }
+  ],
+  "animation": [
+    {
+      "property": "Camera transforms",
+      "from": "encuadre inicial",
+      "to": "encuadre final",
+      "timing": "movimiento simple de cámara",
+      "easing": "no especificado",
+      "evidence": "confirmed"
+    },
+    {
+      "property": "Z Position de capas",
+      "from": "misma profundidad",
+      "to": "planos separados",
+      "timing": "configuración",
+      "easing": "no aplica",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [],
+  "professionalDecisions": [
+    "Aproximar la profundidad y forma general de la escena es más importante que generar geometría perfecta para este método rápido.",
+    "El método simplificado funciona especialmente bien en naturaleza y paisajes lejanos.",
+    "Una máscara muy simple puede ser suficiente cuando no hay contornos críticos, pero puede producir artefactos visibles en bordes definidos.",
+    "La cantidad de separación y el recorrido de cámara deben mantenerse dentro de lo que soportan los recortes."
+  ],
+  "failureModes": [
+    {
+      "problem": "Artefactos en contornos definidos por usar máscaras primitivas.",
+      "fix": "Refinar máscaras o usar una segmentación/reconstrucción más completa cuando el sujeto lo requiera."
+    },
+    {
+      "problem": "La profundidad no se siente coherente.",
+      "fix": "Redistribuir los planos en Z para aproximar mejor la forma y profundidad de la escena."
+    },
+    {
+      "problem": "El sistema rápido se usa en una imagen con oclusiones complejas.",
+      "fix": "Cambiar a un flujo de segmentación/clean plates más completo."
+    }
+  ],
+  "qualityChecks": [
+    "Los planos cercanos se desplazan más que los lejanos durante el movimiento de cámara.",
+    "Los bordes de máscara no generan artefactos evidentes.",
+    "La profundidad aproximada conserva la lectura de la fotografía.",
+    "El recorrido de cámara no supera las limitaciones de la segmentación."
+  ],
+  "reusableRecipe": [
+    "Duplicar la foto en los planos necesarios.",
+    "Enmascarar regiones que representen distintas profundidades.",
+    "Distribuir los planos en Z aproximando la escena.",
+    "Coordinar clones con expresiones cuando aporte velocidad y reutilización.",
+    "Crear y animar una cámara sencilla.",
+    "Comprobar artefactos de borde y limitar el recorrido si la segmentación es simple.",
+    "Escalar el método hacia segmentación y reconstrucción más completas cuando existan sujetos oclusivos importantes."
+  ],
+  "missingInformation": [
+    "Expresiones exactas utilizadas para los clones.",
+    "Valores exactos de Z y cámara.",
+    "Valores de máscara/feather.",
+    "Curvas exactas de la animación."
+  ],
+  "confidence": 0.82,
+  "analysisMethod": "Descripción pública del video y página complementaria del autor; no se inventan valores ni expresiones no publicadas.",
+  "sourceCheckedAt": "2026-09-21"
+}

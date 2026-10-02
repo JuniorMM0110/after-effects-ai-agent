@@ -1,0 +1,157 @@
+{
+  "id": "SYNTH-COMPOSITING-001",
+  "title": "Compositing integrado — tracking, roto, keying y sky replacement",
+  "technique": "compositing integration",
+  "origin": "synthesized",
+  "sourceIds": [
+    "AE-011",
+    "AE-012",
+    "AE-013",
+    "AE-019"
+  ],
+  "curatedIds": [],
+  "summary": "Flujo consolidado para integrar elementos en footage real: resolver movimiento, aislar foreground, crear matte/key limpio, insertar/reemplazar fondo y terminar con color, luz, perspectiva y atmósfera coherentes.",
+  "prerequisites": [
+    "Footage con resolución/calidad suficiente para tracking y matte.",
+    "Objetivo claro de integración: attach 2D, solve 3D, roto/key o reemplazo de fondo.",
+    "Assets de reemplazo compatibles en perspectiva, movimiento y luz."
+  ],
+  "consensus": [
+    {
+      "rule": "Resolver movimiento/aislamiento antes de dedicar tiempo al look final.",
+      "support": 4,
+      "confidence": 0.98
+    },
+    {
+      "rule": "Validar mattes y tracks durante toda la toma, no solo en un frame.",
+      "support": 4,
+      "confidence": 0.99
+    },
+    {
+      "rule": "La integración final depende de perspectiva, luz, color y bordes además del matte.",
+      "support": 3,
+      "confidence": 0.98
+    },
+    {
+      "rule": "Usar herramientas especializadas según el problema en vez de forzar una sola técnica.",
+      "support": 4,
+      "confidence": 0.99
+    }
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Clasificar la toma: tracking 2D, camera solve 3D, roto, keying o combinación.",
+      "why": "Elegir la herramienta correcta antes de procesar.",
+      "confidence": 0.99
+    },
+    {
+      "step": 2,
+      "action": "Resolver tracking/cámara si los elementos deben seguir el movimiento de la toma.",
+      "why": "Crear una base espacial estable para el composite.",
+      "confidence": 0.98
+    },
+    {
+      "step": 3,
+      "action": "Aislar foreground con Roto Brush/mattes o chroma key según el material.",
+      "why": "Definir oclusiones limpias antes de insertar elementos.",
+      "confidence": 0.99
+    },
+    {
+      "step": 4,
+      "action": "Refinar bordes, chatter, spill y alpha.",
+      "why": "Evitar halos y separación artificial.",
+      "confidence": 0.99
+    },
+    {
+      "step": 5,
+      "action": "Insertar/reemplazar el elemento de fondo/3D en perspectiva correcta.",
+      "why": "Construir la relación espacial principal.",
+      "confidence": 0.98
+    },
+    {
+      "step": 6,
+      "action": "Igualar color, contraste, blur, grano y luz.",
+      "why": "Hacer que las fuentes parezcan capturadas en la misma toma.",
+      "confidence": 0.98
+    },
+    {
+      "step": 7,
+      "action": "Añadir relight/atmósfera cuando cambie el ambiente.",
+      "why": "Unificar foreground y background físicamente.",
+      "confidence": 0.96
+    },
+    {
+      "step": 8,
+      "action": "Revisar toda la toma a velocidad real y sobre fondos de contraste cuando proceda.",
+      "why": "Detectar drift, matte chatter, halos y cambios de integración.",
+      "confidence": 0.99
+    }
+  ],
+  "alternatives": [
+    {
+      "when": "Objeto/plano simple con movimiento en pantalla.",
+      "use": "Tracking 2D + Null.",
+      "confidence": 0.98
+    },
+    {
+      "when": "Movimiento de cámara con paralaje suficiente.",
+      "use": "3D Camera Tracker + puntos/planos resueltos.",
+      "confidence": 0.98
+    },
+    {
+      "when": "Sujeto sin chroma limpio.",
+      "use": "Roto Brush/Refine Edge.",
+      "confidence": 0.97
+    },
+    {
+      "when": "Chroma screen usable.",
+      "use": "Garbage matte + Keylight + Key Cleaner + spill suppression.",
+      "confidence": 0.99
+    }
+  ],
+  "conflicts": [],
+  "failureModes": [
+    {
+      "problem": "Track correcto pero elemento parece flotar.",
+      "fix": "Revisar perspectiva, escala, orientación, blur y contacto visual."
+    },
+    {
+      "problem": "Matte funciona en un frame pero vibra en movimiento.",
+      "fix": "Corregir propagación/chatter y validar temporalmente."
+    },
+    {
+      "problem": "Key limpio pero bordes verdes/grises.",
+      "fix": "Refinar edge y spill; revisar sobre fondos de contraste."
+    },
+    {
+      "problem": "Nuevo cielo/fondo parece pegado.",
+      "fix": "Relight/color-match/atmósfera y perspectiva coherentes."
+    },
+    {
+      "problem": "Se empieza color grading antes de resolver tracking/matte.",
+      "fix": "Cerrar primero estructura del composite y luego polish."
+    }
+  ],
+  "qualityChecks": [
+    "No hay drift perceptible.",
+    "Mattes son estables temporalmente.",
+    "Bordes, motion blur y profundidad se integran.",
+    "Luz/color/perspectiva son coherentes.",
+    "No quedan halos ni spill.",
+    "El composite funciona a velocidad real y en frames problemáticos."
+  ],
+  "reusableRecipe": [
+    "Clasifica tracking/matte.",
+    "Resuelve movimiento.",
+    "Aísla foreground.",
+    "Refina alpha/bordes.",
+    "Inserta elemento o fondo.",
+    "Iguala perspectiva/color/luz.",
+    "Añade atmósfera/relight si hace falta.",
+    "Revisa la toma completa."
+  ],
+  "confidence": 0.97,
+  "sourceLimitations": "Los cuatro tutoriales cubren subproblemas complementarios; la síntesis prioriza prácticas comunes y mantiene parámetros específicos como dependientes del footage.",
+  "generatedAt": "2026-09-21"
+}

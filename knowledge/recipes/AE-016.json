@@ -1,0 +1,129 @@
+{
+  "sourceId": "AE-016",
+  "title": "Walk Cycle — receta aprendida",
+  "summary": "Construcción de un walk cycle sobre un rig IK, priorizando poses clave del ciclo, centro de gravedad, contacto de pies, oposición brazos/piernas y repetición limpia.",
+  "techniques": [
+    "walk cycle",
+    "character animation",
+    "IK rig",
+    "contact pose",
+    "passing pose",
+    "up/down poses",
+    "center of gravity",
+    "looping"
+  ],
+  "prerequisites": [
+    "Personaje ya riggeado",
+    "Controles IK para manos/pies y centro de gravedad",
+    "Comprender que rigging y animación son etapas distintas"
+  ],
+  "projectStructure": [
+    "Character rig comp",
+    "Visible animation controls",
+    "Hidden rig internals",
+    "Looping walk animation"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Identificar y usar los controles principales del rig (pies, manos, centro de gravedad).",
+      "why": "Animar desde controles de alto nivel en lugar de entrar en la estructura interna.",
+      "evidence": "confirmed",
+      "timestamp": null
+    },
+    {
+      "step": 2,
+      "action": "Construir las poses principales del ciclo antes de pulir in-betweens.",
+      "why": "Asegurar mecánica clara de caminata y ritmo consistente.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 3,
+      "action": "Mantener oposición entre brazos y piernas.",
+      "why": "Crear balance natural durante el paso.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 4,
+      "action": "Animar subida/bajada del centro de gravedad a lo largo del ciclo.",
+      "why": "Evitar que el personaje se deslice rígidamente en línea recta.",
+      "evidence": "inferred",
+      "timestamp": null
+    },
+    {
+      "step": 5,
+      "action": "Cerrar el ciclo sin salto temporal entre último y primer estado.",
+      "why": "Permitir repetición continua.",
+      "evidence": "inferred",
+      "timestamp": null
+    }
+  ],
+  "animation": [
+    {
+      "property": "Feet IK controls",
+      "from": "contact",
+      "to": "passing/contact alterno",
+      "timing": "ciclo periódico",
+      "easing": "según peso y estilo",
+      "evidence": "confirmed"
+    },
+    {
+      "property": "Center of Gravity",
+      "from": "pose baja",
+      "to": "pose alta/baja",
+      "timing": "coordinado con pasos",
+      "easing": "según estilo",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [],
+  "professionalDecisions": [
+    "No confundir la construcción del rig con la animación del walk cycle.",
+    "Ocultar layers internas del rig y trabajar desde controles.",
+    "Usar IK para posicionar manos/pies mientras el sistema resuelve articulaciones intermedias.",
+    "Ajustar el carácter del walk mediante timing, amplitud vertical, stride y swing, no solo copiando poses."
+  ],
+  "failureModes": [
+    {
+      "problem": "Los pies patinan sobre el suelo.",
+      "fix": "Mantener Position del pie fija durante el contacto y mover el cuerpo/otro pie alrededor de ese apoyo."
+    },
+    {
+      "problem": "El personaje parece flotar.",
+      "fix": "Añadir variación vertical del centro de gravedad y peso en las poses de contacto."
+    },
+    {
+      "problem": "Brazos y piernas se mueven del mismo lado a la vez.",
+      "fix": "Usar oposición diagonal salvo que el estilo requiera otra cosa."
+    },
+    {
+      "problem": "El loop salta al reiniciar.",
+      "fix": "Asegurar continuidad entre primer y último estado y evitar duplicar innecesariamente el mismo frame final."
+    }
+  ],
+  "qualityChecks": [
+    "Los pies no deslizan durante contacto.",
+    "El centro de gravedad transmite peso.",
+    "Las extremidades muestran oposición creíble.",
+    "El ciclo puede repetirse sin salto.",
+    "La personalidad del walk es consistente con timing y amplitud elegidos."
+  ],
+  "reusableRecipe": [
+    "Usa un rig IK ya probado.",
+    "Bloquea poses clave antes de pulir.",
+    "Mantén pies plantados durante contacto.",
+    "Coordina brazos, piernas y centro de gravedad.",
+    "Ajusta timing/spacing para peso y personalidad.",
+    "Cierra y prueba el loop varias veces."
+  ],
+  "missingInformation": [
+    "La fuente pública disponible no expone todos los timestamps/valores del tutorial.",
+    "No se atribuye un número exacto de frames por paso como regla universal.",
+    "La nomenclatura de controles depende del rig."
+  ],
+  "confidence": 0.88,
+  "analysisMethod": "Transcripción pública extensa del tutorial de School of Motion y referencias educativas que describen el ciclo; principios de poses se mantienen sin inventar valores temporales específicos.",
+  "sourceCheckedAt": "2026-09-21"
+}

@@ -1,0 +1,122 @@
+{
+  "sourceId": "AE-004",
+  "title": "Text Animators — receta aprendida",
+  "summary": "Uso del Text Animator como sistema procedural de efectores sobre formas vectoriales, no solo como preset de entrada de texto. Permite construir animaciones complejas y patrones en una sola capa con pocos keyframes.",
+  "techniques": [
+    "text animators",
+    "range selectors",
+    "procedural animation",
+    "vector-shape thinking",
+    "path animation",
+    "abstract patterns",
+    "single-layer systems"
+  ],
+  "prerequisites": [
+    "Text layer",
+    "Comprender propiedades básicas de texto y transform"
+  ],
+  "projectStructure": [
+    "Single text layer",
+    "One or more Text Animators",
+    "Selectors/Range Selectors",
+    "Optional path"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Entender el Text Animator como un sistema procedural de efectores aplicado a formas vectoriales.",
+      "why": "Permite dejar de pensar solo en palabras y usar el sistema para motion gráfico general.",
+      "evidence": "confirmed",
+      "timestamp": "00:02:17"
+    },
+    {
+      "step": 2,
+      "action": "Construir un tapered stroke con animadores de texto.",
+      "why": "Demostrar que el sistema puede crear gráficos no textuales sin plugins ni expresiones.",
+      "evidence": "confirmed",
+      "timestamp": "00:15:31"
+    },
+    {
+      "step": 3,
+      "action": "Crear una flecha que sigue un path.",
+      "why": "Usar texto/animadores para distribuir y mover elementos a lo largo de una trayectoria.",
+      "evidence": "confirmed",
+      "timestamp": "00:21:00"
+    },
+    {
+      "step": 4,
+      "action": "Crear un patrón abstracto de puntos.",
+      "why": "Tratar caracteres como partículas/formas y controlar muchos elementos desde una sola capa.",
+      "evidence": "confirmed",
+      "timestamp": "00:22:59"
+    },
+    {
+      "step": 5,
+      "action": "Crear un patrón rotatorio extruido en 3D.",
+      "why": "Mostrar que animadores combinados pueden producir estructuras complejas con muy pocas capas/keyframes.",
+      "evidence": "confirmed",
+      "timestamp": "00:28:13"
+    }
+  ],
+  "animation": [
+    {
+      "property": "Text Animator properties",
+      "from": "estado base",
+      "to": "variaciones procedurales",
+      "timing": "controlado por animators/selectors",
+      "easing": "según keyframes del animator",
+      "evidence": "confirmed"
+    },
+    {
+      "property": "Selector range/offset",
+      "from": "subconjunto inicial",
+      "to": "subconjunto final",
+      "timing": "anima distribución/recorrido",
+      "easing": "no especificado",
+      "evidence": "confirmed"
+    }
+  ],
+  "effects": [],
+  "professionalDecisions": [
+    "Evitar separar cada palabra/letra en capas cuando Text Animators pueden resolverlo proceduralmente.",
+    "Tratar caracteres como shapes cuando el objetivo sea crear patrones, líneas o partículas.",
+    "Combinar varios animadores/selectores en una sola capa antes de recurrir a expresiones complejas.",
+    "Usar una capa procedural cuando simplifique edición, repetición y mantenimiento."
+  ],
+  "failureModes": [
+    {
+      "problem": "Un título simple termina dividido en decenas de capas.",
+      "fix": "Evaluar si Position/Scale/Opacity y selectors de Text Animator pueden resolverlo en una sola capa."
+    },
+    {
+      "problem": "Se usan presets de texto sin entender selectors/propiedades.",
+      "fix": "Construir el comportamiento desde animators y selectors para obtener control real."
+    },
+    {
+      "problem": "Se crean sistemas de shapes o expresiones complejos para patrones repetitivos.",
+      "fix": "Probar primero caracteres simples (puntos/cuadrados) con Text Animators."
+    }
+  ],
+  "qualityChecks": [
+    "La cantidad de capas se mantiene mínima sin perder control.",
+    "Los animators/selectors producen un comportamiento procedural y editable.",
+    "El sistema sigue funcionando al cambiar el contenido o cantidad de caracteres cuando corresponde.",
+    "La animación puede entenderse y ajustarse desde una sola capa o un conjunto pequeño de capas."
+  ],
+  "reusableRecipe": [
+    "Antes de separar texto en muchas capas, intenta resolver el movimiento con Text Animators.",
+    "Añade solo las propiedades necesarias al Animator.",
+    "Usa selectors para definir qué caracteres reciben el efecto y en qué proporción.",
+    "Combina animators para Position, Scale, Rotation, Opacity u otras propiedades.",
+    "Para motion no textual, usa caracteres simples como puntos o formas repetibles.",
+    "Valida que el sistema siga siendo editable con pocos keyframes."
+  ],
+  "missingInformation": [
+    "Valores exactos de todos los animators/selectors de cada ejemplo.",
+    "Parámetros completos del ejemplo de extrusión 3D.",
+    "Curvas de easing exactas de cada demostración."
+  ],
+  "confidence": 0.93,
+  "analysisMethod": "Video, artículo y transcripción pública de School of Motion; capítulos y principios del tutorial están documentados directamente.",
+  "sourceCheckedAt": "2026-09-21"
+}

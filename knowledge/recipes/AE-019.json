@@ -1,0 +1,138 @@
+{
+  "sourceId": "AE-019",
+  "title": "Sky Replacement y compositing — receta aprendida",
+  "summary": "Reemplazo de cielo como flujo de compositing completo: aislar foreground, insertar nuevo cielo, igualar color/contraste/luz, relight del sujeto/escena y terminar con profundidad atmosférica y VFX/color final.",
+  "techniques": [
+    "sky replacement",
+    "compositing",
+    "rotoscoping",
+    "foreground isolation",
+    "color matching",
+    "relighting",
+    "atmospheric depth",
+    "final color"
+  ],
+  "prerequisites": [
+    "Footage con horizonte/foreground separable",
+    "Cielo de reemplazo con perspectiva e iluminación compatibles"
+  ],
+  "projectStructure": [
+    "Original plate",
+    "Foreground isolation/matte",
+    "Replacement sky",
+    "Relight/color layers",
+    "Atmospheric/VFX polish"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "action": "Preparar el composite y analizar qué debe quedar delante del cielo.",
+      "why": "Definir correctamente la oclusión antes de reemplazar el fondo.",
+      "evidence": "confirmed",
+      "timestamp": "00:44"
+    },
+    {
+      "step": 2,
+      "action": "Rotoscopiar/aislar los elementos de foreground.",
+      "why": "Separar sujeto, arquitectura o paisaje que debe permanecer delante del nuevo cielo.",
+      "evidence": "confirmed",
+      "timestamp": "01:04"
+    },
+    {
+      "step": 3,
+      "action": "Refinar la separación del foreground.",
+      "why": "Conseguir bordes utilizables para compositing.",
+      "evidence": "confirmed",
+      "timestamp": "02:30"
+    },
+    {
+      "step": 4,
+      "action": "Insertar y encuadrar el nuevo cielo.",
+      "why": "Establecer la nueva fuente ambiental/fondo.",
+      "evidence": "confirmed",
+      "timestamp": "03:40"
+    },
+    {
+      "step": 5,
+      "action": "Igualar color, contraste y luminancia con la toma.",
+      "why": "Evitar que el cielo parezca pegado sobre el plate.",
+      "evidence": "confirmed",
+      "timestamp": "04:25"
+    },
+    {
+      "step": 6,
+      "action": "Modificar la iluminación de la escena para responder al nuevo cielo.",
+      "why": "Hacer que foreground y fondo compartan una misma condición lumínica.",
+      "evidence": "confirmed",
+      "timestamp": "05:00"
+    },
+    {
+      "step": 7,
+      "action": "Relight del sujeto/foreground.",
+      "why": "Integrar dirección, intensidad y color de luz con el reemplazo.",
+      "evidence": "confirmed",
+      "timestamp": "06:35"
+    },
+    {
+      "step": 8,
+      "action": "Aplicar color/VFX final y profundidad atmosférica.",
+      "why": "Unificar la escena y reforzar distancia entre planos.",
+      "evidence": "confirmed",
+      "timestamp": "07:35"
+    }
+  ],
+  "animation": [],
+  "effects": [],
+  "professionalDecisions": [
+    "El reemplazo no termina al insertar el cielo; la integración lumínica es parte esencial del efecto.",
+    "Foreground debe conservar bordes creíbles, incluyendo vegetación/pelo/arquitectura cuando corresponda.",
+    "El nuevo cielo debe coincidir con perspectiva, horizonte, dirección de luz y atmósfera de la toma.",
+    "Añadir haze/atmospheric depth cuando la distancia entre foreground y cielo lo requiera."
+  ],
+  "failureModes": [
+    {
+      "problem": "El cielo parece una imagen pegada.",
+      "fix": "Revisar color, contraste, perspectiva y relighting de foreground."
+    },
+    {
+      "problem": "Los bordes del horizonte o sujeto tienen halo.",
+      "fix": "Refinar roto/matte y ajustar edge contamination."
+    },
+    {
+      "problem": "La luz del sujeto contradice el nuevo cielo.",
+      "fix": "Relight y corrección selectiva para dirección/color/intensidad coherentes."
+    },
+    {
+      "problem": "La escena carece de profundidad tras el reemplazo.",
+      "fix": "Añadir atmósfera/haze y ajustar contraste/saturación por distancia."
+    },
+    {
+      "problem": "El cielo tiene movimiento o perspectiva incompatibles.",
+      "fix": "Elegir/reencuadrar un plate compatible o trackearlo correctamente."
+    }
+  ],
+  "qualityChecks": [
+    "El horizonte y las oclusiones son limpios.",
+    "La dirección de luz del foreground coincide con el cielo.",
+    "Color y contraste se sienten de la misma escena.",
+    "No existen halos evidentes alrededor del matte.",
+    "La atmósfera comunica profundidad entre foreground y fondo.",
+    "El resultado final funciona tanto en movimiento como en frames aislados."
+  ],
+  "reusableRecipe": [
+    "Aísla foreground.",
+    "Inserta y encuadra el nuevo cielo.",
+    "Iguala perspectiva, color y contraste.",
+    "Relight foreground/subject según el nuevo ambiente.",
+    "Añade profundidad atmosférica cuando corresponda.",
+    "Finaliza con color/VFX y revisa bordes en movimiento."
+  ],
+  "missingInformation": [
+    "No se atribuyen parámetros exactos de color/relighting.",
+    "El método preciso de roto depende de cada plano.",
+    "Los valores de haze/atmospheric depth no son universales."
+  ],
+  "confidence": 0.97,
+  "analysisMethod": "Descripción/capítulos públicos del tutorial con etapas explícitas de roto, aislamiento, nuevo cielo, matching, iluminación, relight y polish; contrastado con guías de compositing actuales.",
+  "sourceCheckedAt": "2026-09-21"
+}

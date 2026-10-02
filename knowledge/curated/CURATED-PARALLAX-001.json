@@ -1,0 +1,74 @@
+{
+  "id": "CURATED-PARALLAX-001",
+  "title": "Parallax fotográfico 2.5D completo",
+  "category": "camera",
+  "priority": "core",
+  "origin": "curated",
+  "confidence": 0.98,
+  "tags": ["parallax", "photo-parallax", "2.5d", "camera", "depth", "segmentation", "clean-plate", "z-space", "scale-compensation", "occlusion"],
+  "techniques": ["layer segmentation", "3D layers", "Z-depth staging", "scale compensation", "clean plate reconstruction", "3D camera", "edge cleanup", "secondary motion"],
+  "summary": "Construye un parallax fotográfico convincente separando los elementos que aportan profundidad o movimiento, reconstruyendo las zonas ocultas, distribuyendo los planos en Z, compensando su tamaño con Scale y animando una cámara 3D dentro de un recorrido que no revele huecos.",
+  "prerequisites": [
+    "Preferir una fuente de alta resolución y con elementos separables.",
+    "Identificar foreground, sujeto, midground, background y cualquier elemento con valor de profundidad o movimiento.",
+    "Definir el recorrido de cámara esperado antes de decidir cuánto fondo oculto debe reconstruirse."
+  ],
+  "decisionRules": [
+    "Separar tantos elementos como aporten profundidad, oclusión o movimiento perceptible; no crear capas para detalles que no mejoren el resultado.",
+    "Mantener juntos los elementos cuya relación de contacto deba permanecer rígida, salvo que vayan a recibir movimiento secundario controlado.",
+    "La profundidad Z debe representar aproximadamente la profundidad relativa de la escena original, no valores arbitrarios.",
+    "Después de mover una capa en Z, recuperar su tamaño aparente mediante Scale, no anulando la profundidad con Position.",
+    "No depender de la imagen base original visible para esconder agujeros. Usar clean plates o reconstrucción suficiente para el recorrido de cámara.",
+    "Si la reconstrucción disponible es limitada, reducir el desplazamiento lateral/orbital de la cámara en vez de revelar zonas inexistentes.",
+    "Elegir una focal y un recorrido de cámara compatibles con la perspectiva original de la imagen.",
+    "El movimiento secundario es opcional y debe preservar el estilo y los contactos de la escena."
+  ],
+  "procedure": [
+    "Analizar la imagen y crear un mapa de profundidad y oclusiones.",
+    "Duplicar o extraer capas independientes para los elementos seleccionados y crear máscaras limpias.",
+    "Reconstruir detrás de cada elemento aislado las zonas que podrían quedar expuestas durante el movimiento de cámara, creando clean plates cuando corresponda.",
+    "Limpiar halos y bordes de recortes; usar feather solo cuando ayude a integrar el plano sin ablandar el sujeto.",
+    "Ocultar la imagen base original cuando las capas separadas y el fondo reconstruido ya reproduzcan correctamente el frame inicial.",
+    "Convertir los planos necesarios a 3D y distribuirlos en Z según su profundidad relativa.",
+    "Compensar con Scale cada cambio de tamaño producido por la distancia Z hasta recuperar el encuadre inicial.",
+    "Orientar planos cuando la geometría aparente lo requiera, por ejemplo suelo, paredes o laderas, en vez de asumir que todos son tarjetas paralelas.",
+    "Crear una cámara 3D y, cuando aporte control, un null de cámara.",
+    "Animar la cámara con desplazamiento moderado y easing coherente; evitar recorridos que revelen la naturaleza plana de los recortes.",
+    "Añadir profundidad de campo, motion blur o movimiento secundario solo cuando mejoren el resultado.",
+    "Revisar varios puntos de toda la trayectoria, detectar huecos, bordes, contactos rotos o cambios de escala y corregir antes de finalizar."
+  ],
+  "failureModes": [
+    {"problem": "Solo se separan dos o tres capas aunque existan elementos importantes en distintas profundidades.", "fix": "Reevaluar la segmentación y separar los elementos que produzcan parallax u oclusión perceptible."},
+    {"problem": "Las capas se hacen pequeñas al alejarlas en Z.", "fix": "Compensar el tamaño aparente con Scale conservando la profundidad Z."},
+    {"problem": "El movimiento de cámara revela huecos detrás de objetos recortados.", "fix": "Extender/reconstruir el fondo o limitar el recorrido de cámara al área reconstruida."},
+    {"problem": "Los bordes de máscaras delatan los recortes.", "fix": "Limpiar contaminación de color, halos y feather; ampliar o retocar el clean plate cuando haga falta."},
+    {"problem": "La escena parece un conjunto de tarjetas planas.", "fix": "Ajustar profundidad, orientación de planos, focal, recorrido de cámara y movimiento secundario."},
+    {"problem": "El frame inicial deja de coincidir con la imagen original.", "fix": "Reajustar Scale y encuadre después de la distribución Z, no colapsar los planos de nuevo con Position."}
+  ],
+  "qualityChecks": [
+    "El frame inicial reconstruye visualmente la imagen original aunque la capa base esté oculta.",
+    "Los planos tienen profundidad relativa coherente.",
+    "No aparece ningún hueco o zona sin reconstruir durante toda la trayectoria.",
+    "No hay halos, seams ni bordes de máscara evidentes.",
+    "Los contactos importantes entre sujeto y entorno se mantienen.",
+    "El parallax es perceptible pero no exagerado.",
+    "La focal y el movimiento de cámara respetan la perspectiva de la imagen.",
+    "Foreground y background presentan desplazamientos relativos creíbles.",
+    "El movimiento secundario, si existe, no rompe el estilo original."
+  ],
+  "reusableRecipe": [
+    "Segmenta por profundidad y valor de movimiento, no por un número fijo de capas.",
+    "Reconstruye primero las áreas ocultas que el movimiento de cámara pueda exponer.",
+    "Convierte los recortes útiles a 3D y distribúyelos en Z según la escena.",
+    "Compensa cada desplazamiento Z con Scale para conservar el frame inicial.",
+    "Crea y anima una cámara 3D con recorrido moderado y focal apropiada.",
+    "Añade movimiento secundario solo donde aporte vida sin romper contactos.",
+    "Revisa toda la trayectoria y corrige huecos, bordes, oclusiones y escalas antes de entregar."
+  ],
+  "validatedSources": [
+    {"type": "official", "name": "Adobe — Animate photos with a parallax effect", "url": "https://helpx.adobe.com/after-effects/how-to/animate-picture.html"},
+    {"type": "official", "name": "Adobe — Content-Aware Fill", "url": "https://helpx.adobe.com/after-effects/desktop/remove-objects-from-your-videos/content-aware-fill.html"},
+    {"type": "tutorial", "name": "School of Motion — Create a 3D Scene from a Photo", "url": "https://schoolofmotion.com/blog/3d-photo-after-effects"},
+    {"type": "community", "name": "Adobe Community — Best Parallax Options", "url": "https://community.adobe.com/questions-529/best-parallax-options-62091"}
+  ]
+}
