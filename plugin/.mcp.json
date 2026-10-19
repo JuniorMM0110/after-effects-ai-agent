@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "after-effects": {
-      "command": "npx",
-      "args": ["-y", "@engine-room/after-effects-mcp"]
-    }
-  }
-}
