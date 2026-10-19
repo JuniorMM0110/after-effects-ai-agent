@@ -1,0 +1,49 @@
+name: Solicitud comercial o demostración
+description: Solicita una demostración, piloto o conversación sobre AE AI.
+title: '[Consulta comercial] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu interés en AE AI. Este formulario crea un **issue público**. No compartas información confidencial, contraseñas, proyectos de clientes, datos de facturación ni contactos privados. Describe solo información general y acordaremos un canal privado si es necesario.
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de consulta
+      options:
+        - Solicitar demostración
+        - Proponer prueba piloto
+        - Colaboración o alianza
+        - Integración para empresa
+        - Información comercial
+    validations:
+      required: true
+  - type: input
+    id: empresa
+    attributes:
+      label: Empresa o equipo (opcional)
+      placeholder: Nombre público del estudio o productora
+  - type: textarea
+    id: necesidad
+    attributes:
+      label: ¿Qué te gustaría automatizar en After Effects?
+      description: Describe el tipo de producción y la necesidad sin adjuntar material reservado.
+      placeholder: P. ej. animación de titulares y paquetes gráficos para televisión.
+    validations:
+      required: true
+  - type: dropdown
+    id: sistema
+    attributes:
+      label: Entorno principal
+      options:
+        - macOS
+        - Windows
+        - macOS y Windows
+        - Aún no definido
+  - type: checkboxes
+    id: privacidad
+    attributes:
+      label: Confirmación
+      options:
+        - label: Entiendo que mi consulta se publicará como issue y no incluiré información confidencial.
+          required: true

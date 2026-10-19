@@ -2,6 +2,16 @@
 
 Este espacio muestra el progreso del plugin AE AI para Adobe After Effects. **No es la distribución del instalador**: los paquetes de macOS y Windows y los cambios de desarrollo completos se mantienen separados de esta página pública.
 
+## 19 de octubre de 2026 — 0.5.2 (mejoras de interfaz)
+
+- Rediseño de la barra de escritura inspirado en interfaces de chat: campo de texto más limpio y acciones agrupadas en la parte inferior.
+- Un solo botón **Ejecutar / Detener** que alterna según el estado real del proceso.
+- Selección compacta de **modelo y esfuerzo de razonamiento** junto al botón de ejecución.
+- El menú `+` reduce su contenido al conservar adjuntos, presets, plantillas y ajustes complementarios.
+- Se mantiene el control de contexto y las herramientas de revisión temporal introducidos en 0.5.1.
+
+**Estado:** desarrollo y pruebas; la nueva interfaz debe verificarse visualmente dentro de After Effects después de reiniciar el panel. No se publica todavía una versión instalable para descarga pública.
+
 ## 19 de octubre de 2026 — 0.5.1 (pruebas)
 
 - Previsualización temporal de animaciones dentro del panel: reproducción de muestras visuales de pocos segundos.
