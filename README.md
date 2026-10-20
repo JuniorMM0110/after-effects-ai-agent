@@ -9,7 +9,7 @@ Diseña, construye, modifica y revisa composiciones de Adobe After Effects desde
 
 [**Solicitar una demostración**](https://github.com/JuniorMM0110/after-effects-ai-agent/issues/new?template=solicitud-comercial.yml) · [**Explorar funciones**](docs/FUNCIONALIDADES.md) · [**English**](README.en.md) · [**Ver novedades**](AVANCES-AE-AI.md)
 
-**Versión en desarrollo: 0.5.3** · **macOS / Windows** (compilaciones de prueba) · **Adobe After Effects**
+**Versión en desarrollo: 0.5.4** · **macOS / Windows** (compilaciones de prueba) · **Adobe After Effects**
 
 </div>
 
@@ -30,7 +30,7 @@ La propuesta está orientada a reducir tareas repetitivas y acelerar primeras ve
 | **Animación** | Ejecutar animaciones temporizadas, movimientos de cámara, parenting, profundidad y transiciones. |
 | **Referencias visuales** | Adjuntar archivos de imagen o video y utilizar referencias durante la elaboración. |
 | **Revisión visual** | Capturas, hojas de contacto y pruebas de calidad para revisar distintos momentos de la composición. |
-| **Motion Review** | Modos rápido (muestreo) y de clip temporal con todos los fotogramas del tramo a FPS originales; no es reproducción RAM en vivo ni visualización continua autónoma de la IA. |
+| **Motion Review** | La IA recibe hojas de contacto reales y fechadas de toda la animación y puede revisar visualmente zonas problemáticas tras corregirlas; también existe un modo para generar un clip a FPS originales, pero no es percepción continua de video. |
 | **Productividad** | Historial de conversaciones, presets, plantillas y controles para reducir contexto innecesario. |
 | **Integración** | Panel CEP dentro de After Effects, puente local y herramientas MCP. |
 

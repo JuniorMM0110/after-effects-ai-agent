@@ -2,6 +2,17 @@
 
 Este espacio muestra el progreso del plugin AE AI para Adobe After Effects. **No es la distribución del instalador**: los paquetes de macOS y Windows y los cambios de desarrollo completos se mantienen separados de esta página pública.
 
+## 20 de octubre de 2026 — 0.5.4 (análisis visual de animaciones por IA)
+
+- Nuevo flujo de revisión donde la IA **recibe imágenes reales** extraídas de la composición, no solo una ruta de video o métricas de fotogramas.
+- Revisión general de toda la línea de tiempo mediante hojas de contacto con marcas de tiempo y revisión concentrada de los segundos que necesitan corrección.
+- Cuando la tarea modifica animaciones, AE AI puede inspeccionar estas imágenes, identificar problemas respaldados por evidencias visuales y solicitar ajustes agrupados en After Effects, con una segunda revisión localizada.
+- Se puede desactivar la revisión automática para reducir consumo. El número de imágenes y las iteraciones se limitan para evitar desperdicio de tokens.
+
+**Importante:** las secuencias de fotogramas permiten que la IA compare visualmente estados y cambios, pero **todavía no equivalen a que el modelo vea un video continuo a FPS completos**. La detección de errores entre las muestras o de defectos sutiles de fluidez no está garantizada.
+
+**Estado:** integrado y comprobado con pruebas automatizadas. Falta la validación final del flujo completo con una composición real después de reiniciar After Effects.
+
 ## 20 de octubre de 2026 — 0.5.3 (Motion Review de FPS reales)
 
 - Incorporado un segundo modo de previsualización para **generar un clip corto con todos los fotogramas de un tramo**, respetando la frecuencia de la composición (ej. 23,976, 29,97 o 60 fps).

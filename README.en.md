@@ -11,7 +11,7 @@ AE AI is an in-app conversational assistant connected to local After Effects too
 - **Editable compositions:** work with layers, text, shapes, keyframes, expressions, effects, controllers and precompositions.
 - **Scene-level automation:** inspect existing work, build scenes and apply coordinated modifications through high-level commands.
 - **Reference-guided workflows:** attach image or video material for context while creating new work.
-- **Review tools:** inspect frames and contact sheets, use sampled motion previews and flag potential issues for human review.
+- **Review tools:** AI-visible timestamped contact sheets from the full composition, close-up review of suspect intervals, and AI-assisted correction of evidence-backed defects. This is visual sampling, not continuous video understanding.
 - **Conversational workflow:** reuse sessions, select AI models and reasoning options supported by the connected account, and view token usage information.
 - **Inside After Effects:** CEP panel, local bridge and Model Context Protocol (MCP) integrations.
 

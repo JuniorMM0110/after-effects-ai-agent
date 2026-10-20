@@ -6,7 +6,7 @@
 
 **¿Puede crear una composición desde una instrucción?** Puede realizar operaciones sobre composición, capas, keyframes, texto, efectos y cámaras. La calidad final depende de los materiales, el contexto, el diseño y las revisiones.
 
-**¿Puede ver las animaciones?** Puede generar muestras y también un MP4 breve con todos los fotogramas del tramo a los FPS originales. Ese clip se renderiza antes de verlo; todavía no es una reproducción RAM en vivo, ni la IA ve automáticamente toda su secuencia visual.
+**¿Puede ver las animaciones?** La IA puede **ver imágenes reales de toda la composición** y compararlas por intervalos, con marcas de tiempo. Puede solicitar cambios y volver a analizar una zona corregida. No ve todos los fotogramas como un video continuo ni garantiza detectar errores entre muestras. Existe un MP4 temporal a FPS originales para reproducción aparte.
 
 **¿Incluye IA ilimitada?** No. Utiliza conexiones compatibles con Codex/ChatGPT y se somete a las cuotas y capacidades de la cuenta.
 
