@@ -8,6 +8,8 @@ Este espacio muestra el progreso del plugin AE AI para Adobe After Effects. **No
 - Revisión general de toda la línea de tiempo mediante hojas de contacto con marcas de tiempo y revisión concentrada de los segundos que necesitan corrección.
 - Cuando la tarea modifica animaciones, AE AI puede inspeccionar estas imágenes, identificar problemas respaldados por evidencias visuales y solicitar ajustes agrupados en After Effects, con una segunda revisión localizada.
 - Se puede desactivar la revisión automática para reducir consumo. El número de imágenes y las iteraciones se limitan para evitar desperdicio de tokens.
+- **Skills seleccionadas automáticamente por tarea:** AE AI puede aprovechar habilidades locales de dirección de arte, revisión de movimiento, layout o investigación de recursos sin que el usuario escriba los nombres de las skills. Solo recomienda las que correspondan al pedido (por ejemplo, «haz un gato y anímalo»).
+- **CI más limpio:** pruebas alineadas con los modos compacto/completo del servidor y comprobaciones de seguridad multiplataforma; se omiten ejecuciones innecesarias por fragmentos de instaladores y commits de desarrollo para reducir alertas.
 
 **Importante:** las secuencias de fotogramas permiten que la IA compare visualmente estados y cambios, pero **todavía no equivalen a que el modelo vea un video continuo a FPS completos**. La detección de errores entre las muestras o de defectos sutiles de fluidez no está garantizada.
 
