@@ -22,7 +22,7 @@ AE AI es un asistente conversacional para Adobe After Effects. Los ejemplos sigu
 - Adjuntar referencias visuales y material audiovisual como apoyo.
 - Generar capturas de distintos instantes de la composición.
 - Evaluar criterios de legibilidad, geometría y estado de aceptación cuando existan evidencias.
-- Revisar movimiento mediante muestras temporales de 2 a 10 fotogramas por segundo y heurísticas de diferencias de píxeles.
+- Revisar movimiento mediante muestras temporales de 2 a 10 fps o mediante un clip temporal con cada fotograma de un tramo limitado (máximo 120 fotogramas), respetando los FPS de la composición y utilizando FFmpeg para codificar.
 - Detectar problemas potenciales y ayudar a proponer correcciones; esta función aún no garantiza autoevaluación ni corrección total.
 
 ## Panel y productividad
@@ -39,6 +39,6 @@ Promociones y gráficas para televisión, motion graphics corporativos, piezas p
 
 ## Limitaciones
 
-No prometemos rotoscopia totalmente autónoma, renders perfectos, edición narrativa de video sin supervisión, generación integrada de recursos con derechos incluidos ni reproducción continua a FPS completos. Para producción se recomienda revisión humana y comprobación del resultado exportado.
+No prometemos rotoscopia totalmente autónoma, renders perfectos, edición narrativa de video sin supervisión, generación integrada de recursos con derechos incluidos ni reproducción RAM en vivo. El clip a FPS completos se genera previamente, no es captura en tiempo real. Para producción se recomienda revisión humana y comprobación del resultado exportado.
 
 [Volver al producto](../README.md) · [Solicitar demostración](https://github.com/JuniorMM0110/after-effects-ai-agent/issues/new?template=solicitud-comercial.yml)

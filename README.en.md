@@ -23,7 +23,7 @@ Broadcast design teams, video production companies, creative studios, marketing 
 
 ## Current stage and limitations
 
-AE AI is **under active development**. It cannot guarantee fully autonomous broadcast-ready output. Animation quality, masks, 3D layouts and review results may still require manual correction. Sampled motion previews are **not real-time full-frame-rate playback**. The main test environment is After Effects 2026 on macOS Intel; packages are also prepared for macOS Apple Silicon and Windows x64, but cross-platform validation is still in progress.
+AE AI is **under active development**. It cannot guarantee fully autonomous broadcast-ready output. Animation quality, masks, 3D layouts and review results may still require manual correction. Short clips can now be rendered from every native composition frame and played at the source frame rate (with FFmpeg). This is **not live RAM Preview or continuous AI visual perception**, and heavy renders can be slow. The main test environment is After Effects 2026 on macOS Intel; packages are also prepared for macOS Apple Silicon and Windows x64, but cross-platform validation is still in progress.
 
 AI model availability and usage limits depend on the user's supported Codex/ChatGPT connection; AE AI does not provide unlimited tokens. **Public pricing and a general-availability release date have not been announced.**
 

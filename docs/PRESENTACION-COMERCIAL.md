@@ -22,7 +22,7 @@ Las piezas de motion graphics implican numerosas tareas repetitivas: organizar c
 1. Definir una escena concreta y un breve criterio visual.
 2. Preparar los recursos y una composición de After Effects.
 3. Ejecutar el flujo conversacional y observar los cambios reales en el proyecto.
-4. Revisar la calidad con capturas, ejemplos temporales de movimiento y reproducción/exportación final fuera de las capacidades de muestreo.
+4. Revisar la calidad con capturas, ejemplos temporales de movimiento y reproducción de un clip temporal renderizado a FPS originales, distinta de la reproducción RAM en vivo.
 5. Evaluar autonomía, calidad, tiempos y consumo de IA, incluyendo cualquier intervención humana.
 
 ## Diferencias de nuestro enfoque
