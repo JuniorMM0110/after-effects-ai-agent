@@ -1,3 +1,13 @@
+## 20 de octubre de 2026 — Optimización de acciones MCP y editor estilo chat
+
+- **Enter envía mensajes; Shift + Enter agrega un salto de línea**, sin perder el botón Ejecutar/Detener.
+- Revisión de movimiento por IA integrada de forma directa en las herramientas de construcción/edición, reduciendo llamadas auxiliares de descubrimiento.
+- Mejor uso de operaciones agrupadas, una sola inspección general y verificación focalizada después de corregir; se evitan controles visuales duplicados.
+- El indicador ahora distingue **llamadas MCP** de cambios individuales en After Effects y muestra el nombre de la operación interna de `invoke_op` cuando está disponible.
+- Objetivo de optimización: alrededor de 5–12 llamadas para tareas comunes, con un presupuesto flexible para tareas complejas. No es un límite que sacrifique correcciones o interrumpa tareas.
+
+**Estado:** pruebas automáticas aprobadas y actualización instalada en la Mac de desarrollo. La reducción de llamadas debe cuantificarse con una nueva prueba real en After Effects; los instaladores privados publicados anteriormente aún requieren actualización antes de distribuir esta revisión.
+
 # Avances de AE AI
 
 Este espacio muestra el progreso del plugin AE AI para Adobe After Effects. **No es la distribución del instalador**: los paquetes de macOS y Windows y los cambios de desarrollo completos se mantienen separados de esta página pública.
